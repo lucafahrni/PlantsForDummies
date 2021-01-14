@@ -47,6 +47,19 @@
         android:layout_marginBottom="428dp"
         android:spinnerMode="dropdown" />
 
+    <EditText
+        android:layout_width="50dp"
+        android:layout_height="wrap_content"
+        android:inputType="number"
+        android:hint="Time"
+        android:ems="10"
+        android:id="@+id/everytime"
+        android:layout_alignBaseline="@+id/textView3"
+        android:layout_alignBottom="@+id/textView3"
+        android:layout_toRightOf="@+id/textView3"
+        android:layout_marginLeft="15dp"
+        android:layout_marginStart="15dp" />
+
     <TextView
         android:id="@+id/textView2"
         android:layout_width="wrap_content"
@@ -68,6 +81,19 @@
         android:layout_marginLeft="20dp"
         android:layout_marginEnd="28dp"
         android:layout_marginBottom="339dp" />
+
+    <EditText
+        android:id="@+id/time2"
+        android:layout_width="50dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginLeft="16dp"
+        android:layout_marginEnd="193dp"
+        android:layout_marginBottom="371dp"
+        android:ems="10"
+        android:hint="Time"
+        android:inputType="number" />
 
     <TextView
         android:id="@+id/textView3"

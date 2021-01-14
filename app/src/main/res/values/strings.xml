@@ -2,4 +2,11 @@
     <string name="app_name">TestPlants</string>
     <string name="hello_text">Plants for Dummies</string>
     <string name="add_button">Add</string>
+    <string-array name="time">
+        <item>Hours</item>
+        <item>Days</item>
+        <item>Weeks</item>
+        <item>Months</item>
+        <item>Years</item>
+    </string-array>
 </resources>
