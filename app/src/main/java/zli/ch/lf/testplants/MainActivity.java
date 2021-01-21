@@ -26,7 +26,7 @@ import zli.ch.lf.testplants.Data.EntityKlasse;
  */
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
     Button createPlantReminder;
-    Reminder reminder;
+    ReminderAdapter reminderAdapter;
     RecyclerView recyclerview;
     Data data;
 
@@ -44,13 +44,14 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     protected void onResume()
     {
         super.onResume();
-        setPlantReminder();
+        setReminderAdapter();
     }
 
-    private void setPlantReminder()
+    private void setReminderAdapter()
     {
         List<EntityKlasse> classList = data.PlantReminderDao().getAllData();
-        reminder = new Reminder(getApplicationContext(), classList);
+        reminderAdapter = new ReminderAdapter(getApplicationContext(), classList);
+        recyclerview.setAdapter(reminderAdapter);
     }
 
     @Override

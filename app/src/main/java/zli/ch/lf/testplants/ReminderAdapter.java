@@ -25,7 +25,7 @@ import zli.ch.lf.testplants.Data.EntityKlasse;
  * @quelle: https://projectnotes.org/it-projects/simple-reminder-android-application-with-source-code/
  *          https://developer.android.com/reference/androidx/recyclerview/widget/RecyclerView.ViewHolder
  */
-public class Reminder extends RecyclerView.Adapter<Reminder.ViewHolder>
+public class ReminderAdapter extends RecyclerView.Adapter<ReminderAdapter.ViewHolder>
 {
     List<EntityKlasse> entityKlassen;
     Context context;
@@ -35,19 +35,26 @@ public class Reminder extends RecyclerView.Adapter<Reminder.ViewHolder>
         private TextView plantReminderText, zeitUndDatumPlantReminder;
         private LinearLayout linearLayout;
 
-        public ViewHolder( @NonNull View itemView)
+        public ViewHolder( @NonNull View view)
         {
-            super(itemView);
+            super(view);
             plantReminderText = (TextView) itemView.findViewById(R.id.reminder);
             zeitUndDatumPlantReminder = (TextView) itemView.findViewById(R.id.tV_zeit_und_datum);
             linearLayout = (LinearLayout) itemView.findViewById(R.id.LinearLayout);
         }
     }
 
-    public Reminder(Context context, List<EntityKlasse> entityKlassen)
+    public ReminderAdapter(Context context, List<EntityKlasse> entityKlassen)
     {
         this.context = context;
         this.entityKlassen = entityKlassen;
+    }
+
+    @Override
+    public void onBindViewHolder(@NonNull ViewHolder holder, int pos)
+    {
+        holder.plantReminderText.setText(entityKlassen.get(pos).getPlantname());
+        holder.zeitUndDatumPlantReminder.setText(entityKlassen.get(pos).getPlantdate() + " " + entityKlassen.get(pos).getPlanttime());
     }
 
     @NonNull
@@ -55,13 +62,6 @@ public class Reminder extends RecyclerView.Adapter<Reminder.ViewHolder>
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType)
     {
         return new ViewHolder(LayoutInflater.from(parent.getContext()).inflate(R.layout.list_view, parent, false));
-    }
-
-    @Override
-    public void onBindViewHolder(@NonNull ViewHolder holder, int position)
-    {
-        holder.plantReminderText.setText(entityKlassen.get(position).getPlantname());
-        holder.zeitUndDatumPlantReminder.setText(entityKlassen.get(position).getPlantdate() + " " + entityKlassen.get(position).getPlanttime());
     }
 
     @Override
