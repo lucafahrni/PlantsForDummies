@@ -19,7 +19,7 @@ import androidx.room.RoomDatabase;
 public abstract class Data extends RoomDatabase {
     private static Data INSTANCE;
 
-    public abstract ReminderDAO ReminderDao();
+    public abstract PlantReminderDAO PlantReminderDao();
 
     public static Data getDatabase(final Context context)
     {

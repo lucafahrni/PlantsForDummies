@@ -17,15 +17,15 @@ import androidx.appcompat.app.AppCompatActivity;
             https://moodle-2.zli.ch/course/view.php?id=646  (Beispiel: SQLite Datenbank mit Rooms)
  */
 public class NotificationText extends AppCompatActivity {
-    TextView textView;
+    TextView textViewPlatzhalter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_notification_text);
-        textView = findViewById(R.id.tV_Platzhalter);
+        setContentView(R.layout.activity_platzhalter);
+        textViewPlatzhalter = findViewById(R.id.tV_Platzhalter);
         Bundle bundle = getIntent().getExtras();
-        textView.setText(bundle.getString("platzhalter"));
+        textViewPlatzhalter.setText(bundle.getString("platzhalter"));
 
     }
 }

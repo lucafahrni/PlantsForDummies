@@ -10,7 +10,7 @@
         android:theme="@style/Theme.TestPlants">
         <activity android:name=".MainActivity"></activity>
         <activity android:name=".NotificationText" />
-        <activity android:name=".CreateReminder">
+        <activity android:name=".CreatePlantReminder">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

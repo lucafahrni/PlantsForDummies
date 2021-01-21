@@ -25,19 +25,19 @@ import zli.ch.lf.testplants.Data.EntityKlasse;
  * @quellen: keine
  */
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
-    Button createReminder;
+    Button createPlantReminder;
     Reminder reminder;
     RecyclerView recyclerview;
-    Data database;
+    Data data;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        createReminder = findViewById(R.id.btn_newPlantReminder);
+        createPlantReminder = findViewById(R.id.btn_newPlantReminder);
         recyclerview = findViewById(R.id.recyclerview);
-        createReminder.setOnClickListener(this);
-        database = Data.getDatabase(getApplicationContext());
+        createPlantReminder.setOnClickListener(this);
+        data = Data.getDatabase(getApplicationContext());
     }
 
     @Override
@@ -49,22 +49,21 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     private void setPlantReminder()
     {
-        List<EntityKlasse> classList = database.ReminderDao().getAllData();
+        List<EntityKlasse> classList = data.PlantReminderDao().getAllData();
         reminder = new Reminder(getApplicationContext(), classList);
     }
 
     @Override
     public void onClick(View view)
     {
-        if (view == createReminder) {
+        if (view == createPlantReminder) {
             CreatePlantReminder();
         }
     }
 
     private void CreatePlantReminder()
     {
-        Intent intent = new Intent(getApplicationContext(), CreateReminder.class);
+        Intent intent = new Intent(getApplicationContext(), CreatePlantReminder.class);
         startActivity(intent);
     }
-
 }

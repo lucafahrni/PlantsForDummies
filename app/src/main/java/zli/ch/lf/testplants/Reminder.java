@@ -32,15 +32,15 @@ public class Reminder extends RecyclerView.Adapter<Reminder.ViewHolder>
 
     class ViewHolder extends RecyclerView.ViewHolder
     {
-        private TextView eventText, timeAndDateText;
-        private LinearLayout toplayout;
+        private TextView plantReminderText, zeitUndDatumPlantReminder;
+        private LinearLayout linearLayout;
 
         public ViewHolder( @NonNull View itemView)
         {
             super(itemView);
-            eventText = (TextView) itemView.findViewById(R.id.reminder);
-            timeAndDateText = (TextView) itemView.findViewById(R.id.tV_zeit_und_datum);
-            toplayout = (LinearLayout) itemView.findViewById(R.id.toplayout);
+            plantReminderText = (TextView) itemView.findViewById(R.id.reminder);
+            zeitUndDatumPlantReminder = (TextView) itemView.findViewById(R.id.tV_zeit_und_datum);
+            linearLayout = (LinearLayout) itemView.findViewById(R.id.LinearLayout);
         }
     }
 
@@ -54,14 +54,14 @@ public class Reminder extends RecyclerView.Adapter<Reminder.ViewHolder>
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType)
     {
-        return new ViewHolder(LayoutInflater.from(parent.getContext()).inflate(R.layout.listings_row, parent, false));
+        return new ViewHolder(LayoutInflater.from(parent.getContext()).inflate(R.layout.list_view, parent, false));
     }
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position)
     {
-        holder.eventText.setText(entityKlassen.get(position).getPlantname());
-        holder.timeAndDateText.setText(entityKlassen.get(position).getPlantdate() + " " + entityKlassen.get(position).getPlanttime());
+        holder.plantReminderText.setText(entityKlassen.get(position).getPlantname());
+        holder.zeitUndDatumPlantReminder.setText(entityKlassen.get(position).getPlantdate() + " " + entityKlassen.get(position).getPlanttime());
     }
 
     @Override

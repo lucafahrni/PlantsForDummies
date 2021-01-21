@@ -40,20 +40,21 @@ import zli.ch.lf.testplants.Data.EntityKlasse;
  * @quellen: https://developer.android.com/reference/android/app/DatePickerDialog
  *           https://developer.android.com/reference/android/app/TimePickerDialog
  *           https://developer.android.com/training/basics/intents/result#java
+ *           https://stackoverflow.com/questions/3851507/android-widget-how-to-change-the-text-of-a-button
  */
-public class CreateReminder extends AppCompatActivity implements View.OnClickListener {
-    Button btn_time, btn_date, btn_done;
-    EditText editext_message;
+public class CreatePlantReminder extends AppCompatActivity implements View.OnClickListener {
+    Button btn_zeit, btn_datum, btn_safe;
+    EditText nameOfPlant;
     String timeNotification;
     Data data;
 
     @Override
     public void onClick(View view)
     {
-        if (view == btn_time)
+        if (view == btn_zeit)
         {
             selectTime();
-        } else if (view == btn_date)
+        } else if (view == btn_datum)
         {
             selectDate();
         } else {
@@ -66,37 +67,37 @@ public class CreateReminder extends AppCompatActivity implements View.OnClickLis
     {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_create_reminder);
-        btn_time = findViewById(R.id.btn_zeit);
-        btn_date = findViewById(R.id.btn_datum);
-        btn_done = findViewById(R.id.btn_safe);
-        editext_message = findViewById(R.id.nameOfPlant);
-        btn_time.setOnClickListener(this);
-        btn_date.setOnClickListener(this);
-        btn_done.setOnClickListener(this);
+        btn_zeit = findViewById(R.id.btn_zeit);
+        btn_datum = findViewById(R.id.btn_datum);
+        btn_safe = findViewById(R.id.btn_safe);
+        nameOfPlant = findViewById(R.id.nameOfPlant);
+        btn_zeit.setOnClickListener(this);
+        btn_datum.setOnClickListener(this);
+        btn_safe.setOnClickListener(this);
         data = Data.getDatabase(getApplicationContext());
 
     }
 
     private void submit()
     {
-        String text = editext_message.getText().toString().trim();
+        String text = nameOfPlant.getText().toString().trim();
         // Verhindern vonn leeren values
         // @quelle: https://stackoverflow.com/questions/3851507/android-widget-how-to-change-the-text-of-a-button
         if (text.isEmpty())
         {
-            if (btn_time.getText().toString().equals("Zeit der giessung") || btn_date.getText().toString().equals("Datum der giessung"))
+            if (btn_zeit.getText().toString().equals("Zeit der giessung") || btn_datum.getText().toString().equals("Datum der giessung"))
             {
                 //Zeigt Meldung wenn kein Datum oder keine Zeit ausgewählt wurde
                 Toast.makeText(this, "Error, bitte wähle eine gültige Zeit und ein gültiges Datum", Toast.LENGTH_SHORT).show();
             } else {
                 EntityKlasse entityKlasse = new EntityKlasse();
-                String value = (editext_message.getText().toString().trim());
-                String date = (btn_date.getText().toString().trim());
-                String time = (btn_time.getText().toString().trim());
+                String value = (nameOfPlant.getText().toString().trim());
+                String date = (btn_datum.getText().toString().trim());
+                String time = (btn_zeit.getText().toString().trim());
                 entityKlasse.setPlantdate(date);
                 entityKlasse.setPlantname(value);
                 entityKlasse.setPlanttime(time);
-                data.ReminderDao().insertAll(entityKlasse);
+                data.PlantReminderDao().insertAll(entityKlasse);
                 setAlarm(date, value, time);
             }
         }
@@ -113,7 +114,7 @@ public class CreateReminder extends AppCompatActivity implements View.OnClickLis
             @Override
             public void onDateSet(DatePicker datePicker, int jahr, int monat, int tag)
             {
-                btn_date.setText(tag + "-" + (monat + 1) + "-" + jahr);
+                btn_datum.setText(tag + "-" + (monat + 1) + "-" + jahr);
             }
         }, jahr, monat, tag);
         datePickerDialog.show();
@@ -130,7 +131,7 @@ public class CreateReminder extends AppCompatActivity implements View.OnClickLis
             public void onTimeSet(TimePicker timePicker, int j, int j2)
             {
                 timeNotification = j + ":" + j2;
-                btn_time.setText(FormatTime(j, j2));
+                btn_zeit.setText(FormatTime(j, j2));
             }
         }, stunde, minute, false);
         timePickerDialog.show();
@@ -185,7 +186,7 @@ public class CreateReminder extends AppCompatActivity implements View.OnClickLis
         if (requestCode == 1) {
             if (resultCode == RESULT_OK && data != null) {
                 ArrayList<String> text = data.getStringArrayListExtra(RecognizerIntent.EXTRA_RESULTS);
-                editext_message.setText(text.get(0));
+                nameOfPlant.setText(text.get(0));
             }
         }
 

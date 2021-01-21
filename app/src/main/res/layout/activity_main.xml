@@ -24,8 +24,8 @@
         android:layout_marginTop="15dp"
         android:layout_marginEnd="16dp"
         android:layout_marginBottom="652dp"
-        android:text="Neuen Pflanzen Reminder"
+        android:text="@string/btn_newPlantReminder"
         android:textAllCaps="false"
-        android:textColor="@color/white" />
+        android:textColor="@color/black" />
 
 </RelativeLayout>

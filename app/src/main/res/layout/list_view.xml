@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:id="@+id/toplayout"
+    android:id="@+id/LinearLayout"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:background="@color/cardview_dark_background"
@@ -36,7 +36,7 @@
             android:layout_height="wrap_content"
             android:alpha=".8"
             android:padding="10dp"
-            android:text="Platzhalter"
+            android:text="@string/tV_zeit_und_datum"
             android:textColor="#ffffff"
             android:textSize="14sp"
             android:textStyle="bold|italic" />

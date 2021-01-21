@@ -1,8 +1,14 @@
 <resources>
     <string name="app_name">Plants for Dummies</string>
     <string name="hello_text">Plants for Dummies</string>
-    <string name="add_button">Add</string>
-    <string-array name="time">
+    <string name="btn_newPlantReminder">Neuer Reminder</string>
+    <string name="nameOfPlant">Name der Pflanze</string>
+    <string name="btn_datum">Giess Datum</string>
+    <string name="btn_zeit">Giess Zeit</string>
+    <string name="btn_safe">Speichern</string>
+    <string name="tV_Platzhalter">Platzhalter</string>
+    <string name="tV_zeit_und_datum">Platzhalter</string>
+    <string-array name="zeit">
         <item>Hours</item>
         <item>Days</item>
         <item>Weeks</item>

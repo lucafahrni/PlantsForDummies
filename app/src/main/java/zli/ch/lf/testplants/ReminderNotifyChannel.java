@@ -9,7 +9,6 @@ import android.content.Intent;
 import android.os.Build;
 import android.app.Notification;
 import android.os.Bundle;
-import android.widget.RemoteViews;
 
 import androidx.core.app.NotificationCompat;
 
@@ -19,10 +18,12 @@ import androidx.core.app.NotificationCompat;
  *
  * ReminderNotifyChannel
  *
- * Beinhaltet NotificationChannel und Bundle, beides Methode von android selber
+ * Beinhaltet NotificationChannel,BroadcastReceiver und Bundle, beides Methode von android selber
+ * handelt die broadcast intents
  *
  * @quelle: https://developer.android.com/reference/android/app/NotificationChannel
  *          https://developer.android.com/reference/android/os/Bundle
+ *          https://developer.android.com/reference/android/content/BroadcastReceiver
  */
 public class ReminderNotifyChannel extends BroadcastReceiver
 {

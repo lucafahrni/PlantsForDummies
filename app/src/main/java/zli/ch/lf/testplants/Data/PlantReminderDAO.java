@@ -14,15 +14,15 @@ import java.util.List;
  * Data Access Object Klasse von PlantsForDummies
  */
 @Dao
-public interface ReminderDAO {
+public interface PlantReminderDAO {
 
     @Query("SELECT * FROM newTable")
     List<EntityKlasse> getAllData();
 
     @Insert
     void insertAll
-            ( EntityKlasse entityKlasse
-    );
+            (EntityKlasse entityKlasse
+            );
 
 
 }
