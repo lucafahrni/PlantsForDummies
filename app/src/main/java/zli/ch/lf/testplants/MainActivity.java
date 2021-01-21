@@ -13,6 +13,17 @@ import java.util.List;
 import zli.ch.lf.testplants.Data.Data;
 import zli.ch.lf.testplants.Data.EntityKlasse;
 
+/*
+ * @author Luca Fahrni
+ * @version 21.01.2021
+ * @class: ReminderDAO
+ *
+ * Main Activity von PlantsForDummies
+ * onResume, on Create, setPlantReminder, CreatePlantReminder und onClick Methoden
+ * sorgen dafür das Button-Klicks, PlantReminders und alles andere auch richtig erkannt und verarbeitet wird
+ *
+ * @quellen: keine
+ */
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
     Button createReminder;
     Reminder reminder;
@@ -33,14 +44,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     protected void onResume()
     {
         super.onResume();
-        setReminder();
+        setPlantReminder();
     }
 
-    private void setReminder()
+    private void setPlantReminder()
     {
         List<EntityKlasse> classList = database.ReminderDao().getAllData();
         reminder = new Reminder(getApplicationContext(), classList);
-        recyclerview.setAdapter(reminder);
     }
 
     @Override

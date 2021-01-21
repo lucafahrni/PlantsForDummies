@@ -29,8 +29,18 @@ import java.util.Date;
 import zli.ch.lf.testplants.Data.Data;
 import zli.ch.lf.testplants.Data.EntityKlasse;
 
-//https://developer.android.com/reference/android/app/DatePickerDialog
-//https://developer.android.com/reference/android/app/TimePickerDialog
+/*
+ * @author Luca Fahrni
+ * @version 21.01.2021
+ * @class: ReminderDAO
+ *
+ * Create Reminder Klasse von PlantsForDummies
+ * Erstellt Reminder
+ *
+ * @quellen: https://developer.android.com/reference/android/app/DatePickerDialog
+ *           https://developer.android.com/reference/android/app/TimePickerDialog
+ *           https://developer.android.com/training/basics/intents/result#java
+ */
 public class CreateReminder extends AppCompatActivity implements View.OnClickListener {
     Button btn_time, btn_date, btn_done;
     EditText editext_message;

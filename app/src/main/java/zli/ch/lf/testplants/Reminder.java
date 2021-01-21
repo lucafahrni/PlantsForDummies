@@ -17,9 +17,13 @@ import zli.ch.lf.testplants.Data.EntityKlasse;
 /*
  * @author Luca Fahrni
  * @version 21.01.2021
- * @class: Reminder
+ *
+ * Reminder Klasse von Plants for Dummies
+ *
+ * Beinhaltet vor allem den ViewHolder(RecycleView), der ViewHolder beschreibt eine Element-Ansicht innerhalb der RecyclerView.
  *
  * @quelle: https://projectnotes.org/it-projects/simple-reminder-android-application-with-source-code/
+ *          https://developer.android.com/reference/androidx/recyclerview/widget/RecyclerView.ViewHolder
  */
 public class Reminder extends RecyclerView.Adapter<Reminder.ViewHolder>
 {

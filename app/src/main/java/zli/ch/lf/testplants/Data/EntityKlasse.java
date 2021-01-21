@@ -4,6 +4,14 @@ import androidx.room.ColumnInfo;
 import androidx.room.Entity;
 import androidx.room.PrimaryKey;
 
+/*
+ * @author Luca Fahrni
+ * @version 21.01.2021
+ * @class: ENtityKlasse
+ *
+ * Entitiy Klasse von PlantsforDummies
+ * Beinhaltet getter und setter von name, datum und zeit
+ */
 @Entity(tableName = "newTable")
 public class EntityKlasse {
     @PrimaryKey(autoGenerate = true)

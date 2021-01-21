@@ -9,7 +9,8 @@ import androidx.room.RoomDatabase;
 /*
  * @author Luca Fahrni
  * @version 21.01.2021
- * @class: Data
+ *
+ * Data
  *
  * @quelle: https://projectnotes.org/it-projects/simple-reminder-android-application-with-source-code/
  * @quelle: https://moodle-2.zli.ch/course/view.php?id=646  (Beispiel: SQLite Datenbank mit Rooms)

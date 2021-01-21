@@ -16,7 +16,10 @@ import androidx.core.app.NotificationCompat;
 /*
  * @author Luca Fahrni
  * @version 21.01.2021
- * @class: ReminderNotifyChannel
+ *
+ * ReminderNotifyChannel
+ *
+ * Beinhaltet NotificationChannel und Bundle, beides Methode von android selber
  *
  * @quelle: https://developer.android.com/reference/android/app/NotificationChannel
  *          https://developer.android.com/reference/android/os/Bundle
@@ -42,7 +45,7 @@ public class ReminderNotifyChannel extends BroadcastReceiver
         remoteViews.setOnClickPendingIntent(R.id.flashButton, pendingSwitchIntent);
         remoteViews.setTextViewText(R.id.message, platzhalter);
         remoteViews.setTextViewText(R.id.date, datum);
-        //Icon VIew Notificaiton
+        //Icon View Notificaiton, Wecker wird angezeigt in view
         builder.setSmallIcon(R.drawable.ic_alarm_white_24dp);
         builder.setAutoCancel(true);
         builder.setOngoing(true);

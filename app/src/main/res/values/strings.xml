@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">TestPlants</string>
+    <string name="app_name">Plants for Dummies</string>
     <string name="hello_text">Plants for Dummies</string>
     <string name="add_button">Add</string>
     <string-array name="time">

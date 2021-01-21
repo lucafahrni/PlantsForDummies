@@ -12,8 +12,6 @@ import java.util.List;
  * @class: ReminderDAO
  *
  * Data Access Object Klasse von PlantsForDummies
- *
- * @quelle: https://projectnotes.org/it-projects/simple-reminder-android-application-with-source-code/
  */
 @Dao
 public interface ReminderDAO {
