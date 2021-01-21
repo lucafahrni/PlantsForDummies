@@ -1,11 +1,12 @@
 package zli.ch.lf.testplants;
 
-import android.content.Context;
-import android.view.LayoutInflater;
-import android.view.View;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+
+import android.content.Context;
+import android.view.LayoutInflater;
+import android.view.View;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -38,30 +39,35 @@ public class ReminderAdapter extends RecyclerView.Adapter<ReminderAdapter.ViewHo
         public ViewHolder( @NonNull View view)
         {
             super(view);
-            plantReminderText = (TextView) itemView.findViewById(R.id.reminder);
             zeitUndDatumPlantReminder = (TextView) itemView.findViewById(R.id.tV_zeit_und_datum);
             linearLayout = (LinearLayout) itemView.findViewById(R.id.LinearLayout);
+            plantReminderText = (TextView) itemView.findViewById(R.id.reminder);
+
         }
     }
 
     public ReminderAdapter(Context context, List<EntityKlasse> entityKlassen)
     {
-        this.context = context;
         this.entityKlassen = entityKlassen;
+        this.context = context;
     }
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int pos)
     {
         holder.plantReminderText.setText(entityKlassen.get(pos).getPlantname());
-        holder.zeitUndDatumPlantReminder.setText(entityKlassen.get(pos).getPlantdate() + " " + entityKlassen.get(pos).getPlanttime());
+        holder.zeitUndDatumPlantReminder.setText(
+                entityKlassen.get(pos).getPlantdate() + " " + entityKlassen.get(pos).getPlanttime()
+        );
     }
 
     @NonNull
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int type)
     {
-        return new ViewHolder(LayoutInflater.from(parent.getContext()).inflate(R.layout.list_view, parent, false));
+        return new ViewHolder(LayoutInflater.from(
+                parent.getContext()).inflate(R.layout.list_view, parent, false)
+        );
     }
 
     @Override

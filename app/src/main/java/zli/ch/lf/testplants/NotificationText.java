@@ -18,13 +18,13 @@ import androidx.appcompat.app.AppCompatActivity;
  */
 public class NotificationText extends AppCompatActivity {
     TextView textViewPlatzhalter;
-
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
+    protected void onCreate(Bundle savedInstanceState)
+    {
         setContentView(R.layout.activity_platzhalter);
         textViewPlatzhalter = findViewById(R.id.tV_Platzhalter);
         Bundle bundle = getIntent().getExtras();
+        super.onCreate(savedInstanceState);
         textViewPlatzhalter.setText(bundle.getString("platzhalter"));
 
     }

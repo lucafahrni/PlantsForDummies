@@ -14,11 +14,11 @@
 
 
     <EditText
-        android:id="@+id/nameOfPlant"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="20dp"
         android:hint="@string/nameOfPlant"
+        android:id="@+id/nameOfPlant"
         android:padding="10dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -27,14 +27,13 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.065" />
 
-    <Button
-        android:id="@+id/btn_zeit"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+    <Button        android:layout_height="wrap_content"
         android:layout_marginHorizontal="25dp"
         android:text="@string/btn_zeit"
         android:textAllCaps="false"
         android:textColor="@color/black"
+        android:id="@+id/btn_zeit"
+        android:layout_width="wrap_content"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
@@ -43,9 +42,6 @@
         app:layout_constraintVertical_bias="0.257" />
 
     <Button
-        android:id="@+id/btn_datum"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
         android:layout_marginHorizontal="25dp"
         android:text="@string/btn_datum"
         android:textAllCaps="false"
@@ -53,11 +49,19 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
+        android:id="@+id/btn_datum"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.257" />
 
     <Button
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
         android:id="@+id/btn_safe"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -65,10 +69,6 @@
         android:layout_marginTop="232dp"
         android:text="@string/btn_safe"
         android:textColor="@color/black"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/nameOfPlant"
         app:layout_constraintVertical_bias="0.0" />
 </androidx.constraintlayout.widget.ConstraintLayout>

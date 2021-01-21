@@ -1,15 +1,18 @@
 package zli.ch.lf.testplants;
 
-import android.view.View;
-import android.widget.Button;
-import android.widget.DatePicker;
-import android.widget.EditText;
-import android.widget.TimePicker;
 import android.widget.Toast;
 import android.app.AlarmManager;
 import android.app.DatePickerDialog;
 import android.app.PendingIntent;
 import android.app.TimePickerDialog;
+import android.view.View;
+import android.widget.EditText;
+import android.widget.TimePicker;
+
+import android.widget.Button;
+
+import android.widget.DatePicker;
+
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
@@ -20,6 +23,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import java.text.SimpleDateFormat;
 import java.text.DateFormat;
+
 import java.text.ParseException;
 
 import java.util.ArrayList;
@@ -142,18 +146,18 @@ public class CreatePlantReminder extends AppCompatActivity implements View.OnCli
     {
         String zeit;
         zeit = "";
-        String Minute;
+        String minute2;
         if (minute / 10 == 0) {
-            Minute = "0" + minute;
+            minute2 = "0" + minute;
         } else {
-            Minute = "" + minute;
+            minute2 = "" + minute;
         }
         return zeit;
     }
 
     private void setAlarm(String platzhalter, String datum, String zeit)
     {
-        AlarmManager am = (AlarmManager) getSystemService(Context.ALARM_SERVICE);
+        AlarmManager aM = (AlarmManager) getSystemService(Context.ALARM_SERVICE);
         Intent intent = new Intent(getApplicationContext(), ReminderNotifyChannel.class);
         intent.putExtra("reminder", platzhalter);
         intent.putExtra("zeit", zeit);
@@ -164,7 +168,7 @@ public class CreatePlantReminder extends AppCompatActivity implements View.OnCli
         try
         {
             Date datum2 = formatter.parse(dateandtime);
-            am.set(AlarmManager.RTC_WAKEUP, datum2.getTime(), pendingIntent);
+            aM.set(AlarmManager.RTC_WAKEUP, datum2.getTime(), pendingIntent);
 
         } catch (ParseException e) {
             e.printStackTrace();

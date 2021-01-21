@@ -1,9 +1,10 @@
 package zli.ch.lf.testplants;
 
-import android.content.Intent;
-import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.content.Intent;
+import android.os.Bundle;
+
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.RecyclerView;
@@ -22,22 +23,26 @@ import zli.ch.lf.testplants.Data.EntityKlasse;
  * onResume, on Create, setPlantReminder, CreatePlantReminder und onClick Methoden
  * sorgen dafür das Button-Klicks, PlantReminders und alles andere auch richtig erkannt und verarbeitet wird
  *
- * @quellen: keine
+ *  @quelle: https://projectnotes.org/it-projects/simple-reminder-android-application-with-source-code/
  */
-public class MainActivity extends AppCompatActivity implements View.OnClickListener {
-    Button createPlantReminder;
+public class MainActivity extends AppCompatActivity implements View.OnClickListener
+{
+
     ReminderAdapter reminderAdapter;
     RecyclerView recyclerview;
     Data data;
+    Button createPlantReminder;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-        createPlantReminder = findViewById(R.id.btn_newPlantReminder);
         recyclerview = findViewById(R.id.recyclerview);
         createPlantReminder.setOnClickListener(this);
         data = Data.getDatabase(getApplicationContext());
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+        createPlantReminder = findViewById(R.id.btn_newPlantReminder);
+
     }
 
     @Override
