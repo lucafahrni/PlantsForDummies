@@ -4,7 +4,7 @@ import androidx.room.ColumnInfo;
 import androidx.room.Entity;
 import androidx.room.PrimaryKey;
 
-@Entity(tableName = "myTable")
+@Entity(tableName = "newTable")
 public class EntityKlasse {
     @PrimaryKey(autoGenerate = true)
     int id;
@@ -16,27 +16,33 @@ public class EntityKlasse {
     String planttime;
 
 
-    public String getPlantname() {
+    public String getPlantname()
+    {
         return plantname;
     }
 
-    public void setPlantname(String plantname) {
+    public void setPlantname(String plantname)
+    {
         this.plantname = plantname;
     }
 
-    public String getPlantdate() {
+    public String getPlantdate()
+    {
         return plantdate;
     }
 
-    public void setPlantdate(String plantdate) {
+    public void setPlantdate(String plantdate)
+    {
         this.plantdate = plantdate;
     }
 
-    public String getPlanttime() {
+    public String getPlanttime()
+    {
         return planttime;
     }
 
-    public void setPlanttime(String planttime) {
+    public void setPlanttime(String planttime)
+    {
         this.planttime = planttime;
     }
 }

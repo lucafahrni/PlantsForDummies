@@ -14,7 +14,7 @@ public class NotificationText extends AppCompatActivity {
         setContentView(R.layout.activity_notification_text);
         textView = findViewById(R.id.tv_message);
         Bundle bundle = getIntent().getExtras();
-        textView.setText(bundle.getString("message"));
+        textView.setText(bundle.getString("platzhalter"));
 
     }
 }

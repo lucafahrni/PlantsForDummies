@@ -10,15 +10,14 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.List;
 
-import zli.ch.lf.testplants.Data.DatabaseKlasse;
+import zli.ch.lf.testplants.Data.Data;
 import zli.ch.lf.testplants.Data.EntityKlasse;
-import zli.ch.lf.testplants.Adapter.*;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
     Button createReminder;
-    EventAdapter reminderAdapter;
+    Reminder reminder;
     RecyclerView recyclerview;
-    DatabaseKlasse database;
+    Data database;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,21 +26,21 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         createReminder = findViewById(R.id.btn_createReminder);
         recyclerview = findViewById(R.id.recyclerview);
         createReminder.setOnClickListener(this);
-        database = DatabaseKlasse.getDatabase(getApplicationContext());
+        database = Data.getDatabase(getApplicationContext());
     }
 
     @Override
     protected void onResume()
     {
         super.onResume();
-        setAdapter();
+        setReminder();
     }
 
-    private void setAdapter()
+    private void setReminder()
     {
         List<EntityKlasse> classList = database.ReminderDao().getAllData();
-        reminderAdapter = new EventAdapter(getApplicationContext(), classList);
-        recyclerview.setAdapter(reminderAdapter);
+        reminder = new Reminder(getApplicationContext(), classList);
+        recyclerview.setAdapter(reminder);
     }
 
     @Override
