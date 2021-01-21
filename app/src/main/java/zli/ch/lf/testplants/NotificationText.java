@@ -23,7 +23,7 @@ public class NotificationText extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_notification_text);
-        textView = findViewById(R.id.tv_message);
+        textView = findViewById(R.id.tV_Platzhalter);
         Bundle bundle = getIntent().getExtras();
         textView.setText(bundle.getString("platzhalter"));
 

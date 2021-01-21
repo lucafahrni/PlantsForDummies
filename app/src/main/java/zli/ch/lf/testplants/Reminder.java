@@ -38,8 +38,8 @@ public class Reminder extends RecyclerView.Adapter<Reminder.ViewHolder>
         public ViewHolder( @NonNull View itemView)
         {
             super(itemView);
-            eventText = (TextView) itemView.findViewById(R.id.event);
-            timeAndDateText = (TextView) itemView.findViewById(R.id.time_and_date);
+            eventText = (TextView) itemView.findViewById(R.id.reminder);
+            timeAndDateText = (TextView) itemView.findViewById(R.id.tV_zeit_und_datum);
             toplayout = (LinearLayout) itemView.findViewById(R.id.toplayout);
         }
     }

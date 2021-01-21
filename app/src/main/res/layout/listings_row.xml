@@ -7,7 +7,7 @@
     android:orientation="vertical">
 
     <TextView
-        android:id="@+id/event"
+        android:id="@+id/reminder"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:padding="10dp"
@@ -23,6 +23,7 @@
         android:paddingEnd="10dp">
 
         <ImageView
+            android:id="@+id/img_icon_wecker"
             android:layout_width="177dp"
             android:layout_height="wrap_content"
             android:layout_gravity="center|left"
@@ -30,7 +31,7 @@
             android:background="@drawable/ic_alarm_white_24dp" />
 
         <TextView
-            android:id="@+id/time_and_date"
+            android:id="@+id/tV_zeit_und_datum"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:alpha=".8"

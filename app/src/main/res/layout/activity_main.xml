@@ -13,18 +13,18 @@
         android:layout_height="match_parent"/>
 
     <Button
-        android:id="@+id/btn_createReminder"
+        android:id="@+id/btn_newPlantReminder"
         android:layout_width="wrap_content"
         android:layout_height="64dp"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginStart="26dp"
-        android:layout_marginTop="635dp"
-        android:layout_marginEnd="202dp"
-        android:layout_marginBottom="32dp"
-        android:text="Add new Plant Reminder"
+        android:layout_marginStart="211dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="652dp"
+        android:text="Neuen Pflanzen Reminder"
         android:textAllCaps="false"
         android:textColor="@color/white" />
 

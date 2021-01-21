@@ -66,10 +66,10 @@ public class CreateReminder extends AppCompatActivity implements View.OnClickLis
     {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_create_reminder);
-        btn_time = findViewById(R.id.btn_time);
-        btn_date = findViewById(R.id.btn_date);
-        btn_done = findViewById(R.id.btn_done);
-        editext_message = findViewById(R.id.editext_message);
+        btn_time = findViewById(R.id.btn_zeit);
+        btn_date = findViewById(R.id.btn_datum);
+        btn_done = findViewById(R.id.btn_safe);
+        editext_message = findViewById(R.id.nameOfPlant);
         btn_time.setOnClickListener(this);
         btn_date.setOnClickListener(this);
         btn_done.setOnClickListener(this);

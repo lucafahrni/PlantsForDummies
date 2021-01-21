@@ -39,18 +39,11 @@ public class ReminderNotifyChannel extends BroadcastReceiver
         NotificationManager nManager = (NotificationManager) context.getSystemService(Context.NOTIFICATION_SERVICE);
         NotificationCompat.Builder builder = new NotificationCompat.Builder(context, "notification");
 
-        RemoteViews remoteViews = new RemoteViews(context.getPackageName(), R.layout.notification_layout);
-        remoteViews.setImageViewResource(R.id.image, R.mipmap.ic_launcher);
-        PendingIntent pendingSwitchIntent = PendingIntent.getBroadcast(context, 0, intent, 0);
-        remoteViews.setOnClickPendingIntent(R.id.flashButton, pendingSwitchIntent);
-        remoteViews.setTextViewText(R.id.message, platzhalter);
-        remoteViews.setTextViewText(R.id.date, datum);
         //Icon View Notificaiton, Wecker wird angezeigt in view
         builder.setSmallIcon(R.drawable.ic_alarm_white_24dp);
         builder.setAutoCancel(true);
         builder.setOngoing(true);
         builder.setOnlyAlertOnce(true);
-        builder.setContent(remoteViews);
         builder.setContentIntent(pendingIntent);
 
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O)

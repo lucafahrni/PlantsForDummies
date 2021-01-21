@@ -34,7 +34,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        createReminder = findViewById(R.id.btn_createReminder);
+        createReminder = findViewById(R.id.btn_newPlantReminder);
         recyclerview = findViewById(R.id.recyclerview);
         createReminder.setOnClickListener(this);
         database = Data.getDatabase(getApplicationContext());
