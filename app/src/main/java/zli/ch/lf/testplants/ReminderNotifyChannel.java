@@ -61,7 +61,5 @@ public class ReminderNotifyChannel extends BroadcastReceiver
 
         Notification notification = builder.build();
         nManager.notify(1, notification);
-
-
     }
 }
