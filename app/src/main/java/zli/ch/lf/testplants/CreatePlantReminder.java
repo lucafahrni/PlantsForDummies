@@ -62,22 +62,6 @@ public class CreatePlantReminder extends AppCompatActivity implements View.OnCli
         }
     }
 
-    @Override
-    protected void onCreate(Bundle savedInstanceState)
-    {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_create_reminder);
-        btn_zeit = findViewById(R.id.btn_zeit);
-        btn_datum = findViewById(R.id.btn_datum);
-        btn_safe = findViewById(R.id.btn_safe);
-        nameOfPlant = findViewById(R.id.nameOfPlant);
-        btn_zeit.setOnClickListener(this);
-        btn_datum.setOnClickListener(this);
-        btn_safe.setOnClickListener(this);
-        data = Data.getDatabase(getApplicationContext());
-
-    }
-
     private void submit()
     {
         String text = nameOfPlant.getText().toString().trim();
@@ -101,6 +85,22 @@ public class CreatePlantReminder extends AppCompatActivity implements View.OnCli
                 setAlarm(date, value, time);
             }
         }
+    }
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState)
+    {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_create_reminder);
+        btn_zeit = findViewById(R.id.btn_zeit);
+        btn_datum = findViewById(R.id.btn_datum);
+        btn_safe = findViewById(R.id.btn_safe);
+        nameOfPlant = findViewById(R.id.nameOfPlant);
+        btn_zeit.setOnClickListener(this);
+        btn_datum.setOnClickListener(this);
+        btn_safe.setOnClickListener(this);
+        data = Data.getDatabase(getApplicationContext());
+
     }
 
     private void selectDate()
@@ -140,29 +140,24 @@ public class CreatePlantReminder extends AppCompatActivity implements View.OnCli
 
     public String FormatTime(int stunde, int minute)
     {
-
         String zeit;
         zeit = "";
         String Minute;
-
         if (minute / 10 == 0) {
             Minute = "0" + minute;
         } else {
             Minute = "" + minute;
         }
-
         return zeit;
     }
 
     private void setAlarm(String platzhalter, String datum, String zeit)
     {
         AlarmManager am = (AlarmManager) getSystemService(Context.ALARM_SERVICE);
-
         Intent intent = new Intent(getApplicationContext(), ReminderNotifyChannel.class);
         intent.putExtra("reminder", platzhalter);
         intent.putExtra("zeit", zeit);
         intent.putExtra("datum", datum);
-
         PendingIntent pendingIntent = PendingIntent.getBroadcast(getApplicationContext(), 0, intent, PendingIntent.FLAG_ONE_SHOT);
         String dateandtime = datum + " " + timeNotification;
         DateFormat formatter = new SimpleDateFormat("d-M-yyyy hh:mm");

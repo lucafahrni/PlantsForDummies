@@ -28,7 +28,7 @@ public abstract class Data extends RoomDatabase {
             {
                 if (INSTANCE == null)
                 {
-                    INSTANCE = Room.databaseBuilder(context.getApplicationContext(), Data.class, "product_database").allowMainThreadQueries().build();
+                    INSTANCE = Room.databaseBuilder(context.getApplicationContext(), Data.class, "data").allowMainThreadQueries().build();
                 }
             }
         }
