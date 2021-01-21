@@ -8,15 +8,13 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/Theme.TestPlants">
-        <activity android:name=".MainActivity"></activity>
+        <activity android:name=".CreatePlantReminder" />
         <activity android:name=".NotificationText" />
-        <activity android:name=".CreatePlantReminder">
+        <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
     </application>
-    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
 </manifest>

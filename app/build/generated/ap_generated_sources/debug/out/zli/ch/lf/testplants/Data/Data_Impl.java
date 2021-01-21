@@ -3,10 +3,15 @@ package zli.ch.lf.testplants.Data;
 import androidx.room.DatabaseConfiguration;
 import androidx.room.InvalidationTracker;
 import androidx.room.RoomOpenHelper;
+import androidx.room.RoomOpenHelper.Delegate;
 import androidx.room.util.TableInfo;
+import androidx.room.util.TableInfo.Column;
+import androidx.room.util.TableInfo.ForeignKey;
+import androidx.room.util.TableInfo.Index;
 import androidx.sqlite.db.SupportSQLiteDatabase;
 import androidx.sqlite.db.SupportSQLiteOpenHelper;
-
+import androidx.sqlite.db.SupportSQLiteOpenHelper.Callback;
+import androidx.sqlite.db.SupportSQLiteOpenHelper.Configuration;
 import java.lang.IllegalStateException;
 import java.lang.Override;
 import java.lang.String;
@@ -16,7 +21,7 @@ import java.util.HashSet;
 
 @SuppressWarnings("unchecked")
 public final class Data_Impl extends Data {
-  private volatile PlantReminderDAO _Plant_Plant_reminderDAO;
+  private volatile PlantReminderDAO _plantReminderDAO;
 
   @Override
   protected SupportSQLiteOpenHelper createOpenHelper(DatabaseConfiguration configuration) {
@@ -102,15 +107,15 @@ public final class Data_Impl extends Data {
   }
 
   @Override
-  public PlantReminderDAO ReminderDao() {
-    if (_Plant_Plant_reminderDAO != null) {
-      return _Plant_Plant_reminderDAO;
+  public PlantReminderDAO PlantReminderDao() {
+    if (_plantReminderDAO != null) {
+      return _plantReminderDAO;
     } else {
       synchronized(this) {
-        if(_Plant_Plant_reminderDAO == null) {
-          _Plant_Plant_reminderDAO = new PlantReminderDAO_Impl(this);
+        if(_plantReminderDAO == null) {
+          _plantReminderDAO = new PlantReminderDAO_Impl(this);
         }
-        return _Plant_Plant_reminderDAO;
+        return _plantReminderDAO;
       }
     }
   }
